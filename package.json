@@ -1,0 +1,29 @@
+{
+  "name": "Arkanoid",
+  "version": "1.0.0",
+  "description": "## MVP It's a game where the user controls a platform which can move horizontally across the screen in order to bounce a ball into floating bricks to break them.",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.12"
+  },
+  "devDependencies": {
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raynor49/Arkanoid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raynor49/Arkanoid/issues"
+  },
+  "homepage": "https://github.com/Raynor49/Arkanoid#readme"
+}
