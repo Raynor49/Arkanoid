@@ -1,9 +1,19 @@
 body{
   background-color: black;
 }
+.title-container{
+  display: flex;
+  justify-content: center;
+}
+.title{
+  font-size: 40px;
+  font-family: sans-serif;
+  color: white;
+}
 .canvas-container{
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .canvas{
