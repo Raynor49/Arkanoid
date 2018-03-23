@@ -59,6 +59,7 @@ export default class Paddle{
     });
     this.stopIntervalIdsRight = [];
     this.stopIntervalIdsLeft.push(setInterval(() => (this.posX -= 1), 10));
+    this.stopIntervalIdsLeft.push(setInterval(() => (this.posX -= 1), 10));
   }
 
   rightMove(){
@@ -66,6 +67,8 @@ export default class Paddle{
       clearInterval(id);
     });
     this.stopIntervalIdsLeft = [];
+
+    this.stopIntervalIdsRight.push(setInterval(() => (this.posX += 1), 10));
     this.stopIntervalIdsRight.push(setInterval(() => (this.posX += 1), 10));
   }
 

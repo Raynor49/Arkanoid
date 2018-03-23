@@ -4,23 +4,44 @@ export default class GameView{
     this.game = game;
     this.ctx = ctx;
     this.draw = this.draw.bind(this);
+    this.IntervalIds = [];
+    this.pause = this.pause.bind(this);
+    this.start = this.start.bind(this);
+    this.paused = true;
   }
 
   draw(){
     return this.game.draw(this.ctx);
   }
 
-  bindKeyHandlers() {
+  bindKeyHandlers(){
     key('a', () => { this.game.paddle.move('left'); });
     key("d", () => { this.game.paddle.move('right'); });
     key("s", () => { this.game.paddle.move('stop'); });
   }
 
+  unbindKeyHandlers(){
+    key.unbind('a');
+    key.unbind('d');
+    key.unbind('s');
+  }
+
   start(){
-    alert('Welcome to Arkanoid, you know how to play');
-    this.bindKeyHandlers();
-    setInterval(this.draw, 10);
-    setInterval(this.game.moveObjects, 10);
+    if (this.paused){
+      this.paused = false;
+      this.bindKeyHandlers();
+      this.IntervalIds.push(setInterval(this.draw, 10));
+      this.IntervalIds.push(setInterval(this.game.moveObjects, 10));
+      document.getElementById('win-lose').innerHTML = '';
+    }
+  }
+
+  pause(){
+    this.paused = true;
+    this.unbindKeyHandlers();
+    this.IntervalIds.forEach( (id) => {
+      clearInterval(id);
+    });
   }
 
 

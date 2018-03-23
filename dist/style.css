@@ -22,3 +22,36 @@ body{
   background-repeat: no-repeat;
   background-size: contain;
 }
+
+.description-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+button{
+  font-family: sans-serif;
+  background-color: black;
+  color: yellow;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  border: 2px solid black;
+}
+button:hover{
+  cursor: pointer;
+  background-color: yellow;
+  color: black;
+
+}
+
+.win-lose{
+  font-weight: bold;
+  margin-bottom: none;
+  font-size: 30px;
+}

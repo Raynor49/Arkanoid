@@ -4,6 +4,7 @@ export default class Ball{
     this.pos = options.pos;
     this.vel = options.vel;
     this.rad = options.rad;
+    this.acc = options.acc;
   }
 
   draw(ctx){
@@ -19,11 +20,14 @@ export default class Ball{
 
   collisionWall(){
     if (this.pos[0] > 630){
+      this.pos[0] = 630;
       this.bounce('horizontal');
     }else if (this.pos[0] < 30){
+      this.pos[0] = 30;
       this.bounce('horizontal');
     }
     if (this.pos[1] < 30){
+      this.pos[1] = 30;
       this.bounce('vertical');
     }
   }
@@ -45,15 +49,15 @@ export default class Ball{
 
   speedUp(){
     if (this.vel[0] > 0){
-      this.vel[0] += 0.001;
+      this.vel[0] += this.acc;
     }else if (this.vel[0] < 0){
-      this.vel[0] -= 0.001;
+      this.vel[0] -= this.acc;
     }
 
     if (this.vel[1] > 0){
-      this.vel[1] += 0.001;
+      this.vel[1] += this.acc;
     }else if (this.vel[1] < 0){
-      this.vel[1] -= 0.001;
+      this.vel[1] -= this.acc;
     }
   }
 
