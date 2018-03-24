@@ -13,21 +13,39 @@
     <p>Hi! Welcome to Arkanoid! Use A S D keys to move the paddle left, stop it, or right. Try to block the ball and break all the bricks!</p>
     <p>Press Start to try again if you lose, or to start a harder level if you won that round!</p>
     <p>GOODLUCK!!</p>
-    <div class="start-container">
+  </div>
+
+  <div class="canvas-buttons">
+    <div class="pause-start">
       <button type="button" class="start" name="button" id='start'>Start</button>
-    </div>
-    <div class="pause-container">
       <button type="button" class="pause" name="button" id='pause'>Pause</button>
+      <button type="button" class='mute' name="button" id='mute'>Toggle Music</button>
     </div>
+
+    <div class="canvas-container">
+      <canvas class='canvas' id="game-canvas" width="658" height="700">
+    </div>
+
+  </div>
+
+  <div class="score">
+    <p id='lives'></p>
     <p class='win-lose' id='win-lose'></p>
-
+    <p id='highscore' ></p>
+    <p id='score' ></p>
   </div>
 
-
-  <div class="canvas-container">
-    <canvas class='canvas' id="game-canvas" width="658" height="700">
-  </div>
   <body>
 
   </body>
+
+  <footer>
+    <div class="name">
+      <h2>Developed by Willis Roberts</h2>
+    </div>
+    <div class="links">
+      <a href="https://github.com/Raynor49"> <img class='github' src="/Users/raynor/Desktop/App Academy/Arkanoid/assets/github.png" alt=""></a>
+      <a href="https://linkedin.com/in/willis-roberts-8a3b8883"> <img class='linkedIn' src="/Users/raynor/Desktop/App Academy/Arkanoid/assets/Linkedin_circle.svg.png" alt=""></a>
+    </div>
+  </footer>
 </html>

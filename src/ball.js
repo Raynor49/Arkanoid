@@ -48,16 +48,19 @@ export default class Ball{
   }
 
   speedUp(){
-    if (this.vel[0] > 0){
-      this.vel[0] += this.acc;
-    }else if (this.vel[0] < 0){
-      this.vel[0] -= this.acc;
+    if(Math.abs(this.vel[0]) < 10){
+      if (this.vel[0] > 0){
+        this.vel[0] += this.acc;
+      }else if (this.vel[0] < 0){
+        this.vel[0] -= this.acc;
+      }
     }
-
-    if (this.vel[1] > 0){
-      this.vel[1] += this.acc;
-    }else if (this.vel[1] < 0){
-      this.vel[1] -= this.acc;
+    if(Math.abs(this.vel[1]) < 10){
+      if (this.vel[1] > 0){
+        this.vel[1] += this.acc;
+      }else if (this.vel[1] < 0){
+        this.vel[1] -= this.acc;
+      }
     }
   }
 

@@ -76,9 +76,11 @@ export default class Paddle{
     this.stopIntervalIdsRight.forEach( (id) => {
       clearInterval(id);
     });
+    this.stopIntervalIdsRight = [];
     this.stopIntervalIdsLeft.forEach( (id) => {
       clearInterval(id);
     });
+    this.stopIntervalIdsLeft = [];
   }
 
 }

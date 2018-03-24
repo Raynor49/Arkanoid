@@ -9,9 +9,14 @@ export default class Game{
       rad: 7,
       acc: 0.001
     });
+    this.score = 0;
     this.level = 1;
     this.speedInc = 0;
-    this.lives = 1;
+    this.highscore = 0;
+    this.pingSound = new Audio('/Users/raynor/Desktop/App Academy/Arkanoid/assets/Beep1.wav');
+    this.lostSound = new Audio('/Users/raynor/Desktop/App Academy/Arkanoid/assets/Shut_Down1.wav');
+    this.wonSound = new Audio('/Users/raynor/Desktop/App Academy/Arkanoid/assets/Emerge4.wav');
+    this.lives = 3;
     this.paddle = new Paddle(130, 100);
     this.bricks = [];
     for (var i = 0; i < this.level*10; i++) {
@@ -38,15 +43,19 @@ export default class Game{
     }else if(this.bricks.every( (brick) => brick === undefined)){
       this.winGame();
     }
+    document.getElementById('score').innerHTML = "Score: " + this.score;
+    document.getElementById('lives').innerHTML = 'Lives: ' + this.lives;
   }
 
   collisionPaddle(posX1, posX2, height){
     if((this.ball.pos[1] >= height && this.ball.pos[1] <= height + 16) && (this.ball.pos[0] === posX1 - 7 || this.ball.pos[0] === posX2 + 7)){
       this.ball.pos[1] = height;
       this.ball.bounce('horizontal');
+      this.ball.vel[0] += (this.paddle.stopIntervalIdsRight.length - this.paddle.stopIntervalIdsLeft.length);
     }else if ((this.ball.pos[1] >= height && this.ball.pos[1] <= height + 14) && (this.ball.pos[0] > posX1 - 7 && this.ball.pos[0] < posX2 + 7)){
       this.ball.pos[1] = height;
       this.ball.bounce('vertical');
+      this.ball.vel[0] += (this.paddle.stopIntervalIdsRight.length - this.paddle.stopIntervalIdsLeft.length);
     }
   }
 
@@ -56,13 +65,18 @@ export default class Game{
     const height = brick.pos[1];
 
     if((this.ball.pos[1] >= height && this.ball.pos[1] <= height + 16) && (this.ball.pos[0] === posX1 - 7 || this.ball.pos[0] === posX2 + 7)){
+      this.pingSound.load();
+      this.pingSound.play();
       this.ball.bounce('horizontal');
+      this.score += 100;
       delete this.bricks[this.bricks.indexOf(brick)];
     }else if((this.ball.pos[1] >= height && this.ball.pos[1] <= height + 16) && (this.ball.pos[0] > posX1 - 7 && this.ball.pos[0] < posX2 + 7)){
+      this.pingSound.load();
+      this.pingSound.play();
       this.ball.bounce('vertical');
+      this.score += 100;
       delete this.bricks[this.bricks.indexOf(brick)];
     }
-
   }
 
   loseLife(){
@@ -74,21 +88,30 @@ export default class Game{
         rad: 7,
         acc: 0.001 + this.speedInc
       });
+      this.score -= 250;
     }
   }
 
   loseGame(){
+    if (this.highscore < this.score) {
+      this.highscore = this.score;
+    }
+    this.lostSound.play();
     this.speedInc = 0;
     this.level = 1;
-    this.lives = 5;
+    this.lives = 3;
+    this.score = 0;
     this.resetGame();
     document.getElementById('pause').click();
     document.getElementById('win-lose').innerHTML = 'GameOver!';
+    document.getElementById('highscore').innerHTML = "HighScore: " + this.highscore;
   }
 
   winGame(){
+    this.wonSound.play();
     this.speedInc += 0.001;
     this.level++;
+    this.score += 1000;
     this.resetGame();
     document.getElementById('pause').click();
     document.getElementById('win-lose').innerHTML = 'You won that round!';

@@ -12,6 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const start = document.getElementById('start');
   pause.addEventListener("click", gameView.pause);
   start.addEventListener("click", gameView.start);
+  const audio = new Audio('/Users/raynor/Desktop/App Academy/Arkanoid/assets/Crystals - M.O.O.N (Hotline Miami OST).mp3');
+  audio.play();
+  const music = document.getElementById('mute');
+  music.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+  });
+  audio.addEventListener('ended', () => {
+    audio.play();
+  });
 });
 
 

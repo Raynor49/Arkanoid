@@ -1,6 +1,24 @@
 body{
   background-color: black;
 }
+
+footer{
+  color: cyan;
+  text-align: center;
+  font-size: 30px;
+}
+
+.github{
+  height: 150px;
+  width: 150px;
+}
+
+.linkedIn{
+  height:130px;
+  width: 130px;
+  margin-bottom: 10px;
+}
+
 .title-container{
   display: flex;
   justify-content: center;
@@ -37,7 +55,7 @@ button{
   font-family: sans-serif;
   background-color: black;
   color: yellow;
-  font-size: 30px;
+  font-size: 60px;
   font-weight: bold;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -53,5 +71,33 @@ button:hover{
 .win-lose{
   font-weight: bold;
   margin-bottom: none;
+  font-size: 30px;
+}
+
+.canvas-buttons{
+  display:flex;
+  justify-content: center;
+  margin-right: 20%;
+}
+
+.pause-start{
+  margin-top: 300px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.score{
+  position:absolute;
+  left: 1200px;
+  top: 500px;
+  font-size: 30px;
+  color: white;
+  font-family: sans-serif;
+  padding: 125px;
+  padding-top:50px;
+}
+
+.mute{
   font-size: 30px;
 }
