@@ -1,7 +1,8 @@
 # Arkanoid
+It's a game where the user controls a platform which can move horizontally across the screen in order to bounce a ball into floating bricks to break them.
+
 
 ## MVP
-It's a game where the user controls a platform which can move horizontally across the screen in order to bounce a ball into floating bricks to break them.
 
 1. Be able to move the platform at the bottom.
 2. Bounce the ball to break bricks
