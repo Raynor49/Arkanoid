@@ -1,7 +1,7 @@
 # Arkanoid
 It's a game where the user controls a platform which can move horizontally across the screen in order to bounce a ball into floating bricks to break them.
 ![Arkanoid Img](https://github.com/Raynor49/Arkanoid/blob/master/assets/ArkanoidImg.png)
-
+You can view the live game [here](https://raynor49.github.io/Arkanoid/dist/index.html)
 ## MVP
 
 1. Be able to move the platform at the bottom.
