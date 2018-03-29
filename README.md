@@ -2,6 +2,17 @@
 It's a game where the user controls a platform which can move horizontally across the screen in order to bounce a ball into floating bricks to break them.
 ![Arkanoid Img](https://github.com/Raynor49/Arkanoid/blob/master/assets/ArkanoidImg.png)
 You can view the live game [here](https://raynor49.github.io/Arkanoid/dist/index.html)
+
+## Challenge
+I had an interesting challenge in making the paddle move smoothly. Originally I simply subtracted or added a certain amount to the x-position of the paddle
+whenever the a or d keys were pressed. However, this resulted in very disjointed movements, where the paddle would jump to its new position. My next attempt was
+to have the paddle move small distances so it would be smoother, however then the user had to tap the key far too much in order to move significant distance.
+My successful attempt was what you see below:
+![PaddleCode](https://github.com/Raynor49/Arkanoid/blob/master/assets/PaddleCodeScreenshot.png)
+I solved this problem by having the a and d keys set intervals where the paddle would move in a direction by a very small amount every 10ms.
+This allowed for the paddle to move very smoothly while also being able to move quickly. I also stored the interval Ids so that when the user
+chooses to switch directions I am able to clear all the opposite intervals and start creating intervals for the new direction.
+
 ## MVP
 
 1. Be able to move the platform at the bottom.
