@@ -88,7 +88,6 @@ export default class Game{
         rad: 7,
         acc: 0.001 + this.speedInc
       });
-      this.score -= 250;
     }
   }
 
