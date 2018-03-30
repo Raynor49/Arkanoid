@@ -10,6 +10,7 @@ export default class Game{
       acc: 0.001
     });
     this.score = 0;
+    this.prevScore = 0;
     this.level = 1;
     this.speedInc = 0;
     this.highscore = 0;
@@ -99,6 +100,8 @@ export default class Game{
     this.speedInc = 0;
     this.level = 1;
     this.lives = 3;
+    this.prevScore = this.score;
+    document.getElementById('prev-score').innerHTML = 'Your score was: ' + this.prevScore;
     this.score = 0;
     this.resetGame();
     document.getElementById('pause').click();

@@ -83,6 +83,7 @@ class Game{
       acc: 0.001
     });
     this.score = 0;
+    this.prevScore = 0;
     this.level = 1;
     this.speedInc = 0;
     this.highscore = 0;
@@ -161,7 +162,6 @@ class Game{
         rad: 7,
         acc: 0.001 + this.speedInc
       });
-      this.score -= 250;
     }
   }
 
@@ -173,6 +173,8 @@ class Game{
     this.speedInc = 0;
     this.level = 1;
     this.lives = 3;
+    this.prevScore = this.score;
+    document.getElementById('prev-score').innerHTML = 'Your score was: ' + this.prevScore;
     this.score = 0;
     this.resetGame();
     document.getElementById('pause').click();
@@ -305,6 +307,7 @@ class GameView{
       this.IntervalIds.push(setInterval(this.draw, 10));
       this.IntervalIds.push(setInterval(this.game.moveObjects, 10));
       document.getElementById('win-lose').innerHTML = '';
+      document.getElementById('prev-score').innerHTML = '';
     }
   }
 

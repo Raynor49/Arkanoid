@@ -88,14 +88,11 @@ button:hover{
 }
 
 .score{
-  position:absolute;
-  left: 1200px;
-  top: 500px;
+
   font-size: 30px;
   color: white;
   font-family: sans-serif;
   padding: 125px;
-  padding-top:50px;
 }
 
 .mute{

@@ -33,6 +33,7 @@ export default class GameView{
       this.IntervalIds.push(setInterval(this.draw, 10));
       this.IntervalIds.push(setInterval(this.game.moveObjects, 10));
       document.getElementById('win-lose').innerHTML = '';
+      document.getElementById('prev-score').innerHTML = '';
     }
   }
 
