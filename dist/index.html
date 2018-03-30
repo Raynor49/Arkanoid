@@ -10,9 +10,9 @@
     <h1 class="title">Arkanoid</h1>
   </div>
   <div class="description-container">
-    <p>Hi! Welcome to Arkanoid! Use A S D keys to move the paddle left, stop it, or right. Try to block the ball and break all the bricks!</p>
-    <p>Press Start to try again if you lose, or to start a harder level if you won that round!</p>
-    <p>GOODLUCK!!</p>
+    <div>Hi! Welcome to Arkanoid! Use A S D keys to move the paddle left, stop it, or right. Try to block the ball and break all the bricks!</div>
+    <div>Press Start to try again if you lose, or to start a harder level if you won that round!</div>
+    <div>GOODLUCK!!</div>
   </div>
 
   <div class="canvas-buttons">
@@ -26,15 +26,16 @@
       <canvas class='canvas' id="game-canvas" width="658" height="700">
     </div>
 
+    <div class="score">
+      <p id='lives'></p>
+      <p class='win-lose' id='win-lose'></p>
+      <p id='highscore' ></p>
+      <p id='prev-score' ></p>
+      <p id='score' ></p>
+    </div>
   </div>
 
-  <div class="score">
-    <p id='lives'></p>
-    <p class='win-lose' id='win-lose'></p>
-    <p id='highscore' ></p>
-    <p id='prev-score' ></p>
-    <p id='score' ></p>
-  </div>
+
 
   <body>
 

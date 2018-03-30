@@ -29,8 +29,6 @@ footer{
   color: white;
 }
 .canvas-container{
-  display: flex;
-  justify-content: center;
   margin-top: 10px;
 }
 
@@ -65,7 +63,10 @@ button:hover{
   cursor: pointer;
   background-color: yellow;
   color: black;
+}
 
+p{
+  width: 300px;
 }
 
 .win-lose{
@@ -76,23 +77,20 @@ button:hover{
 
 .canvas-buttons{
   display:flex;
-  justify-content: center;
-  margin-right: 20%;
+  justify-content: space-between;
 }
 
 .pause-start{
   margin-top: 300px;
-  margin-right: 100px;
+  margin-left: 7%;
   display: flex;
   flex-direction: column;
 }
 
 .score{
-
   font-size: 30px;
   color: white;
   font-family: sans-serif;
-  padding: 125px;
 }
 
 .mute{
