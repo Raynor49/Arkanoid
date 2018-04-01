@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const start = document.getElementById('start');
   pause.addEventListener("click", gameView.pause);
   start.addEventListener("click", gameView.start);
-  const audio = new Audio('../assets/Moon.mp3');
+  const audio = new Audio('./assets/Moon.mp3');
   audio.play();
   const music = document.getElementById('mute');
   music.addEventListener('click', () => {

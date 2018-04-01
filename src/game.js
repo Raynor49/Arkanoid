@@ -14,9 +14,9 @@ export default class Game{
     this.level = 1;
     this.speedInc = 0;
     this.highscore = 0;
-    this.pingSound = new Audio('../assets/Beep1.wav');
-    this.lostSound = new Audio('../assets/Shut_Down1.wav');
-    this.wonSound = new Audio('../assets/Emerge4.wav');
+    this.pingSound = new Audio('./assets/Beep1.wav');
+    this.lostSound = new Audio('./assets/Shut_Down1.wav');
+    this.wonSound = new Audio('./assets/Emerge4.wav');
     this.lives = 3;
     this.paddle = new Paddle(130, 100);
     this.bricks = [];
