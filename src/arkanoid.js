@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let pause = document.getElementById('pause');
   let start = document.getElementById('start');
   let restart = document.getElementById('restart');
+  const instructions = document.getElementById('open-modal');
+  const modal = document.getElementById('myModal');
+  instructions.addEventListener("click", () => {
+    modal.style.display = 'block';
+  })
   pause.addEventListener("click", gameView.pause);
   start.addEventListener("click", gameView.start);
   restart.addEventListener("click", () => {
@@ -25,6 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
   audio.addEventListener('ended', () => {
     audio.play();
   });
+  window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 });
 
 
