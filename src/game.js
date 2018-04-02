@@ -102,6 +102,7 @@ export default class Game{
     this.lives = 3;
     this.prevScore = this.score;
     document.getElementById('prev-score').innerHTML = 'Your score was: ' + this.prevScore;
+    document.getElementById('score').innerHTML = '';
     this.score = 0;
     this.resetGame();
     document.getElementById('pause').click();

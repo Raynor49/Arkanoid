@@ -2,16 +2,20 @@
 import GameView from './game_view.js';
 import Game from './game.js';
 document.addEventListener("DOMContentLoaded", () => {
-  const canvasEl = document.getElementById('game-canvas');
-  const ctx = canvasEl.getContext("2d");
-  const game = new Game();
-  const gameView = new GameView(game, ctx);
+  let canvasEl = document.getElementById('game-canvas');
+  let ctx = canvasEl.getContext("2d");
+  let game = new Game();
+  let gameView = new GameView(game, ctx);
   gameView.pause();
   // window.ctx = ctx;
-  const pause = document.getElementById('pause');
-  const start = document.getElementById('start');
+  let pause = document.getElementById('pause');
+  let start = document.getElementById('start');
+  let restart = document.getElementById('restart');
   pause.addEventListener("click", gameView.pause);
   start.addEventListener("click", gameView.start);
+  restart.addEventListener("click", () => {
+    gameView.game.loseGame();
+  })
   const audio = new Audio('./assets/Moon.mp3');
   audio.play();
   const music = document.getElementById('mute');
