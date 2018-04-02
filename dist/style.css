@@ -69,6 +69,11 @@ p{
   width: 300px;
 }
 
+.key-img{
+  height: 30px;
+  width: 30px;
+}
+
 .win-lose{
   font-weight: bold;
   margin-bottom: none;
@@ -95,4 +100,8 @@ p{
 
 .mute{
   font-size: 30px;
+}
+
+.restart{
+  font-size: 40px;
 }
