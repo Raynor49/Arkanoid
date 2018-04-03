@@ -26,7 +26,7 @@ footer{
 .title{
   font-size: 80px;
   font-family: sans-serif;
-  color: yellow;
+  color: cyan;
 }
 .canvas-container{
   margin-top: 10px;
@@ -56,7 +56,7 @@ footer{
 
 button{
   font-family: sans-serif;
-  background-color: black;
+  background-color: blue;
   color: yellow;
   font-size: 50px;
   font-weight: bold;
@@ -112,7 +112,7 @@ p{
 }
 
 .modal {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -130,11 +130,5 @@ p{
 }
 
 .open-modal{
-  color: turquoise;
-  font-size: 30px;
-}
-
-.open-modal:hover{
-  color: darkblue;
-  background-color: turquoise;
+  font-size: 35px;
 }
